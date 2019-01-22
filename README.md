@@ -7,7 +7,7 @@ The TiVo Series 3 / HD unit was sold in Australia and New Zealand from 2008 unti
 
 I discovered that I had lost the Passcode for the KidZone functionality, and the TiVo unit was stuck in the KidZone.
 
-The accompanying Arudino Sketch and Frtizing model are a basic circuit I created to [brute force](https://en.wikipedia.org/wiki/Brute-force_search) all the possibly Passcodes.
+The accompanying Arduino Sketch and Fritzing model are a basic circuit I created to [brute force](https://en.wikipedia.org/wiki/Brute-force_search) all the possible Passcodes.
 
 These instructions assume some basic familiarity with electronic circuits and Arduino programming. This is a fairly simple circuit and should be able to be constructed with only minimal experience.
 
@@ -63,7 +63,7 @@ The following software and library modules are all free to use, and are required
     00:10:20.150 -> Digit 0 A10C8C03
     00:10:20.730 -> Digit 2 A10C940B
     ```
-1. Once you have confirmed the sketch is working, unplug the USB Cable and relocate the Arduino Uno and Breadboard with IR Transmitter Module so that the IR module is pointing at the TiVo, and is 5-10 centimeters away - approximately pointing to the middle of the front panel.
+1. Once you have confirmed the sketch is working, unplug the USB Cable and relocate the Arduino Uno and Breadboard with IR Transmitter Module so that the IR module is pointing at the TiVo, and is 5-10 centimetres away - approximately pointing to the middle of the front panel.
 1. In the `KidZone Now Playing` screen, highlight the `Exit TiVo KidZone` menu entry.
 1. Press `Select` on your remote control.
 1. The Four Passcode boxes will be displayed.
