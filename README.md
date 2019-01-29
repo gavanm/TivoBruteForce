@@ -3,7 +3,7 @@ Arduino sketch to try all 10,000 Pin Numbers against a TiVo HD.
 ## Overview
 The TiVo Series 3 / HD unit was sold in Australia and New Zealand from 2008 until approximately 2013. The Electronic Program Guide information was provided until October 2017, when the service was closed down.
 
-[Darren King](http://kingey1971.wixsite.com/tivorepairs) spearheaded a volunteer effort to maintain service through the [OzTiVo](http://www.oztivo.net/twiki/bin/view) community.
+[Darren King](http://kingey1971.wixsite.com/tivorepairs) spearheaded a volunteer effort to maintain service through the [OzTiVo](http://www.oztivo.net/twiki/bin/view) community - with many users coming from the [Whirlpool](https://forums.whirlpool.net.au/archive/2613609) forum.
 
 I discovered that I had lost the Passcode for the KidZone functionality, and the TiVo unit was stuck in the KidZone.
 
