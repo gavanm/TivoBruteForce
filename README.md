@@ -3,7 +3,7 @@ Arduino sketch to try all 10,000 Pin Numbers against a TiVo HD.
 ## Overview
 The TiVo Series 3 / HD unit was sold in Australia and New Zealand from 2008 until approximately 2013. The Electronic Program Guide information was provided until October 2017, when the service was closed down.
 
-[Darren King](http://kingey1971.wixsite.com/tivorepairs) spearheaded a volunteer effort to maintain service through the [OzTiVo](http://www.oztivo.net/twiki/bin/view) community - with many users coming from the [Whirlpool](https://forums.whirlpool.net.au/archive/2613609) forum.
+[Darren King](http://kingey1971.wixsite.com/tivorepairs) spearheaded a volunteer effort to maintain service through the [OzTiVo](http://www.oztivo.net/twiki/bin/view) [community](http://forums.oztivo.net/) - with many users coming from the [Whirlpool](https://forums.whirlpool.net.au/archive/2613609) forum.
 
 I discovered that I had lost the Passcode for the KidZone functionality, and the TiVo unit was stuck in the KidZone.
 
@@ -13,7 +13,7 @@ These instructions assume some basic familiarity with electronic circuits and Ar
 
 ## Prerequisites
 1. TiVo HD / Series 3 - Australian / New Zealand model.
-1. [Arduino Uno] (https://www.littlebird.com.au/arduino-uno-r3) or similar. I tested using an Arduino Uno Rev 1 and also a SparkFun [MicroView](https://www.sparkfun.com/products/12923).
+1. [Arduino Uno](https://www.littlebird.com.au/arduino-uno-r3) or similar. I tested using an Arduino Uno Rev 1 and also a SparkFun [MicroView](https://www.sparkfun.com/products/12923).
 1. USB cable to suit your Arduino.
 1. IR Transmitter Module or similar. I used a [Jaycar IR Transmitter Module](https://www.jaycar.com.au/arduino-compatible-infrared-transmitter-module/p/XC4426) however a [KY-005](https://arduinomodules.info/ky-005-infrared-transmitter-sensor-module/) or plain IR LED (taking note of the polarity of the LED) will also work.
 1. 330Ω 125mW Through Hole Resistor (a 220Ω or 100Ω resistor should also work).
@@ -26,6 +26,7 @@ The following software and library modules are all free to use, and are required
 1. [IRLib2](https://github.com/cyborg5/IRLib2/archive/master.zip) - After running the Arduino IDE, download the IRLib2 and extract into the `...Documents\Arduino\libraries` folder.
 ## Useful Links
 * [Overview of IRLib2](https://learn.adafruit.com/using-an-infrared-library/overview) on the AdaFruit website, written by the library author, [Chris Young](https://github.com/cyborg5/IRLib2).
+* The [TiVo_IR_Codes.txt](TiVo_IR_Codes.txt) file contains a list of all the IR hex codes captured using [AnalysIR](https://www.AnalysIR.com/blog/) from the TiVo Remote. These can be used with the IRLib2 library for replay.
 ## Thankyou
 * [Darren King](http://kingey1971.wixsite.com/tivorepairs) for helping many many people continue using their TiVo's after the EPG service ended.
 * The [OzTivo](http://www.oztivo.net/twiki/bin/view) community for hosting the new EPG, Forum, and supporting all the new users.
@@ -79,5 +80,6 @@ Modify the number in the line `delay(500);` to reflect your desired value.
 * Use a 4 Digit, 7 Segment Display for output.
 * Investigate lower delay times between digits. The lowest attempted value was 300 milliseconds. Perhaps make this configurable using microswitches.
 * Document the sketch used with the [MicroView](https://www.sparkfun.com/products/12923) for recording the current Passcode attempt. This was left out to provide the simplest solution for people.
-* Investigate using SSH direct to the TiVo to find if the Passcode is stored somewhere, or see if the [Network Remote Control](https://github.com/wmcbrine/tivoremote) is an option.
+* Investigate using SSH direct to the TiVo to find if the Passcode is stored somewhere, or see if the [Network 
+Control](https://github.com/wmcbrine/tivoremote) is an option.
 * It would be lovely to determine some way of knowing when the Passcode works, however I don't believe the Tivo HD sends any IR signal out. One thought would be to look for colour changes in the screen however this would be complex to implement.
