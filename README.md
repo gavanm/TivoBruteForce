@@ -1,5 +1,5 @@
 # TivoBruteForce
-Arduino sketch to try all 10,000 Pin Numbers against a TiVo HD
+Arduino sketch to try all 10,000 Pin Numbers against a TiVo HD.
 ## Overview
 The TiVo Series 3 / HD unit was sold in Australia and New Zealand from 2008 until approximately 2013. The Electronic Program Guide information was provided until October 2017, when the service was closed down.
 
@@ -13,19 +13,19 @@ These instructions assume some basic familiarity with electronic circuits and Ar
 
 ## Prerequisites
 1. TiVo HD / Series 3 - Australian / New Zealand model.
-1. [Arduino Uno] (https://www.littlebird.com.au/arduino-uno-r3) or similar. I tested using an Arduino Uno Rev 1 and also a SparkFun [MicroView](https://www.sparkfun.com/products/12923)
+1. [Arduino Uno] (https://www.littlebird.com.au/arduino-uno-r3) or similar. I tested using an Arduino Uno Rev 1 and also a SparkFun [MicroView](https://www.sparkfun.com/products/12923).
 1. USB cable to suit your Arduino.
-1. IR Transmitter Module or similar. I used a [Jaycar IR Transmitter Module](https://www.jaycar.com.au/arduino-compatible-infrared-transmitter-module/p/XC4426) however a [KY-005](https://arduinomodules.info/ky-005-infrared-transmitter-sensor-module/) or plain IR LED (taking note of the polarity of the LED)
-1. 330Ω 125mW Through Hole Resistor (a 220Ω or 100Ω resistor should also work.)
-1. Prototyping [Breadboard](https://www.littlebird.com.au/breadboard-self-adhesive-white)
-1. Breadboard [Jumper Wire](https://www.littlebird.com.au/1-pin-dual-male-breadboard-jumper-wire-75pcs-pack)
+1. IR Transmitter Module or similar. I used a [Jaycar IR Transmitter Module](https://www.jaycar.com.au/arduino-compatible-infrared-transmitter-module/p/XC4426) however a [KY-005](https://arduinomodules.info/ky-005-infrared-transmitter-sensor-module/) or plain IR LED (taking note of the polarity of the LED) will also work.
+1. 330Ω 125mW Through Hole Resistor (a 220Ω or 100Ω resistor should also work).
+1. Prototyping [Breadboard](https://www.littlebird.com.au/breadboard-self-adhesive-white).
+1. Breadboard [Jumper Wire](https://www.littlebird.com.au/1-pin-dual-male-breadboard-jumper-wire-75pcs-pack).
 1. USB Power Pack / Charger (Optional) if you cannot connect your Arduino to your computer within reach of your TiVo. 
 ## Software
 The following software and library modules are all free to use, and are required for the sketch to work.
 1. [Arduino IDE](https://www.arduino.cc/en/main/software) - I used the "Download" version. The sketch is fairly simple, so the Web Editor will probably work too.
 1. [IRLib2](https://github.com/cyborg5/IRLib2/archive/master.zip) - After running the Arduino IDE, download the IRLib2 and extract into the `...Documents\Arduino\libraries` folder.
 ## Useful Links
-* [Overview of IRLib2](https://learn.adafruit.com/using-an-infrared-library/overview) on the AdaFruit website, written by the library Author.
+* [Overview of IRLib2](https://learn.adafruit.com/using-an-infrared-library/overview) on the AdaFruit website, written by the library author, [Chris Young](https://github.com/cyborg5/IRLib2).
 ## Thankyou
 * [Darren King](http://kingey1971.wixsite.com/tivorepairs) for helping many many people continue using their TiVo's after the EPG service ended.
 * The [OzTivo](http://www.oztivo.net/twiki/bin/view) community for hosting the new EPG, Forum, and supporting all the new users.
@@ -44,7 +44,7 @@ The following software and library modules are all free to use, and are required
 1. Open the [TivoBruteForce](TivoBruteForce.ino) sketch in the Arduino IDE.
 1. Compile the sketch.
 1. Upload the sketch.
-1. Open the Serial Monitor window `Tools - Serial Monitor`
+1. Open the Serial Monitor window `Tools - Serial Monitor`.
 1. Look for the status logs as it runs. The current passcode will be shown. Note that the first digit represents the "10,000" passcode batch that is processing. "1" indicates that this is the first time that the number has been attempted. 
     ```    
     00:10:14.020 -> Number: 10000
@@ -75,3 +75,9 @@ The following software and library modules are all free to use, and are required
 * You can speed up the submission by reducing the number of milliseconds the sketch pauses between each digit. I have tested down to 300 milliseconds - however you may start to receive errors in transmission. You should ensure the transmitter is reasonably close to the TiVo.
 Modify the number in the line `delay(500);` to reflect your desired value.
 * Increase the Serial speed. Find the line `Serial.begin(9600);` and change the number to `115200` giving you `Serial.begin(115200);`. In the Serial Monitor, change the speed (bottom right status bar) from `9600 baud` to `115200 baud`. Do not go higher than 115200. The Serial rate *MUST* match between the sketch code and the Serial Monitor.
+## Possible Enhancements (if I need to do this again)
+* Use a 4 Digit, 7 Segment Display for output.
+* Investigate lower delay times between digits. The lowest attempted value was 300 milliseconds. Perhaps make this configurable using microswitches.
+* Document the sketch used with the [MicroView](https://www.sparkfun.com/products/12923) for recording the current Passcode attempt. This was left out to provide the simplest solution for people.
+* Investigate using SSH direct to the TiVo to find if the Passcode is stored somewhere, or see if the [Network Remote Control](https://github.com/wmcbrine/tivoremote) is an option.
+* It would be lovely to determine some way of knowing when the Passcode works, however I don't believe the Tivo HD sends any IR signal out. One thought would be to look for colour changes in the screen however this would be complex to implement.
